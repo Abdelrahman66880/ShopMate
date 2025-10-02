@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+h1 {
+    color: #333;
+}
+#chatBox {
+    margin-top: 20px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    min-height: 100px;
+}
