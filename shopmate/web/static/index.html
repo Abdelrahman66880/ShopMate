@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShopMate</title>
+  <link rel="stylesheet" href="/home/stranger/Desktop/ShopMate/shopmate/web/templates/style.css">
+</head>
+<body>
+  <h1>Welcome to ShopMate 🛍️</h1>
+  <p>Type your query below:</p>
+  <input type="text" id="userInput">
+  <button onclick="sendMessage()">Ask</button>
+  <div id="chatBox"></div>
+
+  <script>
+    function sendMessage() {
+      let msg = document.getElementById("userInput").value;
+      fetch(`/get?msg=${msg}`)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("chatBox").innerHTML += "<p><b>You:</b> " + msg + "</p>";
+          document.getElementById("chatBox").innerHTML += "<p><b>Bot:</b> " + data.response + "</p>";
+        });
+    }
+  </script>
+</body>
+</html>
